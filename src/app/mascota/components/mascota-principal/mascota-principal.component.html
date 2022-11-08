@@ -1,0 +1,54 @@
+<app-mascota-registro
+  (eventoAgregarmascota)="agregarMascota($event)"
+  [editarDatosencapsulados]=""
+></app-mascota-registro>
+
+<div class="container">
+  <mat-card>
+    <mat-card-title class="card__title">Lista de mascotas</mat-card-title>
+
+    <mat-card-content>
+      <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Raza</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="mascotaList  as listarMascotaObservable">
+            <tr *ngIf="listarMascotaObservable.length === 0">
+              <th scope="row">-</th>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </ng-container>
+          <ng-container *ngFor="let datosMascotaObservabe of mascotaList; let i = index">
+            <tr>
+              <td data-bs-toggle="modal" data-bs-target="#editarAlumnoModal">
+                {{ datosMascotaObservabe.nombre  }}
+              </td>
+              <td data-bs-toggle="modal" data-bs-target="#editarAlumnoModal">
+                {{ datosMascotaObservabe.edad  }}
+              </td>
+              <td data-bs-toggle="modal" data-bs-target="#editarAlumnoModal">
+                {{ datosMascotaObservabe.raza }}
+              </td>
+              <td>
+                <mat-icon class="mat-18 warning" (click)="dialogEliminarmascotas(datosMascotaObservabe.id)">delete_forever</mat-icon>
+              </td>
+              <td data-bs-toggle="modal" data-bs-target="#editarAlumnoModal">
+                <mat-icon class="mat-18 edit" (click)="dialogEditarmascotas(datosMascotaObservabe.id)">edit</mat-icon>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

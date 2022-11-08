@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Eliminar Mascota</h1>
+<div mat-dialog-content>
+  ¿Esta seguro de eliminar los datos?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="confirmDelete('Cancelar')">No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="confirmDelete('Eliminar')">Ok</button>
+</div>

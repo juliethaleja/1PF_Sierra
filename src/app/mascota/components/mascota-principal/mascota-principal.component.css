@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+.card__title {
+  text-align: center;
+  color: rgb(6, 152, 189);
+}
+.warning {
+  color: red;
+  font-size: 25px;
+  height: 25px;
+  width: 25px;
+}
+.edit {
+  color: rgb(224, 165, 37);
+  font-size: 25px;
+  height: 25px;
+  width: 25px;
+}

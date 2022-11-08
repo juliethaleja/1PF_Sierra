@@ -1,0 +1,57 @@
+<mat-card-title class="card__title">Regitro de mascotas</mat-card-title>
+<form
+class="row"
+[formGroup]="formularioMascota"
+(ngSubmit)="editarMascota()"
+>
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Nombre de mascota</mat-label>
+  <input matInput formControlName="nombre" />
+</mat-form-field>
+<p
+  class="alert alert-danger"
+  *ngIf="formularioMascota.get('nombre')?.touched &&  formularioMascota.get('nombre')?.errors?.['required']"
+>
+  El campo nombre es requerido
+</p>
+<p
+  class="alert alert-danger"
+  *ngIf="formularioMascota.get('nombre')?.touched &&  formularioMascota.get('nombre')?.errors?.['pattern']"
+>
+  El campo nombre no acepta numeros
+</p>
+
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Edad</mat-label>
+  <input matInput type="number" formControlName="edad" />
+</mat-form-field>
+<p
+  class="alert alert-danger"
+  *ngIf="formularioMascota.get('edad')?.touched && formularioMascota.get('edad')?.errors?.['required']"
+>
+  El campo edad es requerido
+</p>
+
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Raza</mat-label>
+  <input matInput formControlName="raza" />
+</mat-form-field>
+<p
+  class="alert alert-danger"
+  *ngIf="formularioMascota.get('raza')?.touched && formularioMascota.get('raza')?.errors?.['pattern']"
+>
+  El campo raza no acepta numeros
+</p>
+<p
+  class="alert alert-danger"
+  *ngIf=" formularioMascota.get('raza')?.touched && formularioMascota.get('raza')?.errors?.['required']"
+>
+  El campo raza es requerido
+</p>
+<br />
+
+<button mat-raised-button color="primary" type="submit" [disabled]="formularioMascota.invalid" aria-label="Agregar Mascota"
+>
+  <mat-icon>add</mat-icon>
+</button>
+</form>

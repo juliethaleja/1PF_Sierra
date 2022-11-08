@@ -1,0 +1,32 @@
+<nav class="navbar__backgrounrd navbar  ">
+  <div class=" container-fluid">
+    <a data-bs-target="#sidebar" data-bs-toggle="collapse"
+      class="  text-decoration-none navbar__color navbar-brand">
+      <img src="./assets/logo.png" width="50" height="50" class="d-inline-block align-top" alt=""></a>
+    <a data-bs-target="#sidebar" data-bs-toggle="collapse"
+      class=" text-decoration-none navbar__color navbar-brand " href="#">
+      Plataforma de mascotas</a>
+  </div>
+</nav>
+
+  <div class="row flex-nowrap">
+    <div class=" col col-2">
+      <div id="sidebar" class=" collapse collapse-horizontal show border-end">
+        <div id="sidebar-nav" class="background__listgroup list-group border-0 rounded-0 text-sm-start min-vh-100">
+          <a  routerLink="" class="background__list color__list list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i
+              class="bi bi-bootstrap"></i> <span>Inicio</span>
+          </a>
+          <a  routerLink="mascotas" class="background__list color__list list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i
+              class="bi bi-bootstrap"></i> <span>Mascotas</span>
+          </a>
+          <a href="#" class="background__list color__list list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i
+              class="bi bi-bootstrap"></i> <span>Dueño</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col col-8">
+      <router-outlet></router-outlet>
+   </div>
+  </div>
+
